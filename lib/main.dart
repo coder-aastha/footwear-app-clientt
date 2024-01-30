@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:footwear_client/pages/home_page.dart';
 import 'package:footwear_client/pages/login_page.dart';
 import 'package:footwear_client/pages/register_page.dart';
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: RegisterPage(),
+      home: HomePage(),
     );
   }
 }
