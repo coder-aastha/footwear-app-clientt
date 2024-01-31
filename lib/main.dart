@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:footwear_client/controller/home_controller.dart';
 import 'package:footwear_client/controller/login_controller.dart';
 import 'package:footwear_client/pages/home_page.dart';
 import 'package:footwear_client/pages/login_page.dart';
@@ -14,6 +15,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: firebaseOptions);
   Get.put(LoginController());
+  Get.put(HomeController());
   runApp(const MyApp());
 }
 

@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../model/product/product.dart';
 
 class ProductDescriptionPage extends StatelessWidget {
   const ProductDescriptionPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    Product product = Get.arguments['data'];
     return Scaffold(
       appBar: AppBar(
         title: const Text('Product Details', style: TextStyle(fontWeight: FontWeight.bold),),
@@ -17,7 +21,7 @@ class ProductDescriptionPage extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(10),
               child: Image.network(
-                'https://assets.ajio.com/medias/sys_master/root/20231211/x7GW/6576f8cfddf7791519c10bd8/-473Wx593H-466858508-blue-MODEL7.jpg',
+                product.image ?? '',
                 fit: BoxFit.contain,
                 width: double.infinity,
                 height: 200,
@@ -25,7 +29,7 @@ class ProductDescriptionPage extends StatelessWidget {
             ),
             const SizedBox(height: 20,),
             Text(
-                'Puma',
+              product.name ?? '',
                 style: const TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
@@ -34,7 +38,7 @@ class ProductDescriptionPage extends StatelessWidget {
             ),
             const SizedBox(height: 20,),
             Text(
-              'Product Description',
+                product.description ?? '',
               style: const TextStyle(
                 fontSize: 16,
                 height: 1.5
@@ -43,7 +47,7 @@ class ProductDescriptionPage extends StatelessWidget {
             ),
             const SizedBox(height: 20,),
             Text(
-              'Rs. 3000',
+              'Rs. ${product.price ?? ''}',
               style: const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
