@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:footwear_client/pages/login_page.dart';
+import 'package:footwear_client/pages/product_description_page.dart';
 import 'package:footwear_client/widgets/drop_down_button.dart';
 import 'package:footwear_client/widgets/product_card.dart';
+import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 import '../widgets/multi_select_drop_down.dart';
 
@@ -13,7 +17,11 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Footwear Store', style: TextStyle(fontWeight: FontWeight.bold),),
         actions: [
-          IconButton(onPressed: (){}, icon: Icon(Icons.logout))
+          IconButton(onPressed: (){
+            GetStorage box = GetStorage();
+            box.erase();
+            Get.offAll(LoginPage());
+          }, icon: Icon(Icons.logout))
         ],
       ),
       body: Column(
@@ -59,7 +67,12 @@ class HomePage extends StatelessWidget {
                     name: 'Puma',
                     imageUrl: 'https://assets.ajio.com/medias/sys_master/root/20231211/x7GW/6576f8cfddf7791519c10bd8/-473Wx593H-466858508-blue-MODEL7.jpg',
                     price: 2000,
-                    offerTag: '20% off', onTap: () {},);
+                    offerTag: '20% off', onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const ProductDescriptionPage()),
+                      );
+                  },);
                 }),
           )
         ],
