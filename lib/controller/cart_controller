@@ -1,0 +1,28 @@
+// cart_controller.dart
+
+import 'package:get/get.dart';
+import '../model/product/product.dart';
+import '../controller'
+
+class CartController extends GetxController {
+  RxList<Product> cartItems = <Product>[].obs;
+
+  // Method to add item to the cart
+  void addToCart(Product product) {
+    cartItems.add(product);
+  }
+
+  // Method to remove item from the cart
+  void removeFromCart(Product product) {
+    cartItems.remove(product);
+  }
+
+  // Get the total price of items in the cart
+  double getTotalPrice() {
+    double total = 0;
+    for (var item in cartItems) {
+      total += item.price ?? 0;
+    }
+    return total;
+  }
+}

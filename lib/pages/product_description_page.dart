@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:footwear_client/pages/shopping_cart.dart';
 import 'package:get/get.dart';
 
 import '../model/product/product.dart';
+import 'cart_page.dart';
 
 class ProductDescriptionPage extends StatelessWidget {
   const ProductDescriptionPage({super.key});
@@ -65,6 +67,28 @@ class ProductDescriptionPage extends StatelessWidget {
             ),
             ),
             const SizedBox(height: 20,),
+
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  padding: EdgeInsets.symmetric(vertical: 15),
+                  backgroundColor: Colors.orange,
+                ),
+                onPressed: () {
+                  Get.snackbar('Success', 'Cart added successfully',colorText: Colors.green);
+                  // Navigate to the CartPage
+                  Get.to(ShoppingCart());
+                },
+                child: const Text(
+                  'Add to Cart',
+                  style: TextStyle(fontSize: 18, color: Colors.white),
+                ),
+              ),
+            ),
+
+
+            const SizedBox(height: 20,),
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
@@ -76,7 +100,6 @@ class ProductDescriptionPage extends StatelessWidget {
                 'Buy Now',
                 style: TextStyle(fontSize: 18, color: Colors.white),
               ),
-
               )
             ),
           ],
