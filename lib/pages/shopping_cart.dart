@@ -42,14 +42,14 @@ class ShoppingCart extends StatelessWidget {
             ),
             const SizedBox(height: 20,),
             Text(
-              'Rs. 99.99', // Replace with your product price
+              'Rs. 1700.0',
               style: const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
             ),
             const SizedBox(height: 20,),
-            // Add to Cart button
+
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
@@ -58,7 +58,6 @@ class ShoppingCart extends StatelessWidget {
                   backgroundColor: Colors.indigoAccent,
                 ),
                 onPressed: () {
-                  // Add your logic here for adding to cart
                   Get.snackbar('Success', 'Payment is Successful', colorText: Colors.green);
                 },
                 child: const Text(

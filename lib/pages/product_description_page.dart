@@ -76,6 +76,7 @@ class ProductDescriptionPage extends StatelessWidget {
                   backgroundColor: Colors.orange,
                 ),
                 onPressed: () {
+                  Get.snackbar('Success', 'Cart added successfully',colorText: Colors.green);
                   // Navigate to the CartPage
                   Get.to(ShoppingCart());
                 },
