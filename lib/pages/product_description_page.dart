@@ -70,10 +70,13 @@ class ProductDescriptionPage extends StatelessWidget {
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   padding: EdgeInsets.symmetric(vertical: 15), backgroundColor: Colors.indigoAccent
-                ), onPressed: () {  }, child: const Text(
+                ), onPressed: () {
+                  Get.snackbar('Success', 'Payment is successful',colorText: Colors.green);
+              }, child: const Text(
                 'Buy Now',
                 style: TextStyle(fontSize: 18, color: Colors.white),
               ),
+
               )
             ),
           ],
